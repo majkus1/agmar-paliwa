@@ -12,8 +12,8 @@ function UpdatePrice() {
 
   const fetchData = async () => {
     try {
-      const priceResponse = await axios.get('https://agmar-paliwa.pl/fuel-price');
-      const datePriceResponse = await axios.get('https://agmar-paliwa.pl/date-price');
+      const priceResponse = await axios.get('https://agmar-paliwa.pl/apis/fuel-price');
+      const datePriceResponse = await axios.get('https://agmar-paliwa.pl/apis/date-price');
 
       setPrice(priceResponse.data.price);
       setDatPrice(datePriceResponse.data.datprice);
@@ -38,8 +38,8 @@ function UpdatePrice() {
     }
 
     try {
-      await axios.put('https://agmar-paliwa.pl/fuel-price', { price }, { headers: { Authorization: token } });
-      await axios.put('https://agmar-paliwa.pl/date-price', { datprice }, { headers: { Authorization: token } });
+      await axios.put('https://agmar-paliwa.pl/apis/fuel-price', { price }, { headers: { Authorization: token } });
+      await axios.put('https://agmar-paliwa.pl/apis/date-price', { datprice }, { headers: { Authorization: token } });
 
       alert('Price and date updated successfully');
     } catch {

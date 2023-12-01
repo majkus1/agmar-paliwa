@@ -9,8 +9,8 @@ const Home = () => {
 
 	const fetchData = async () => {
 		try {
-			const priceResponse = await axios.get('https://agmar-paliwa.pl/fuel-price')
-			const datePriceResponse = await axios.get('https://agmar-paliwa.pl/date-price')
+			const priceResponse = await axios.get('https://agmar-paliwa.pl/apis/fuel-price')
+			const datePriceResponse = await axios.get('https://agmar-paliwa.pl/apis/date-price')
 
 			setPrice(priceResponse.data.price)
 			setDatPrice(datePriceResponse.data.datprice)
